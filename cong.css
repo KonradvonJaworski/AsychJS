@@ -1,0 +1,126 @@
+body 
+   {
+     margin: 0;
+     padding: 0;
+     color: whitesmoke;
+     font-family: 'Ubuntu', sans-serif;
+     font-size: 16px;
+     font-weight: 300px;
+     line-height:1,75;
+   } 
+h1
+  {
+    font-size : 50px;
+    font-weight: 900;
+    margin: 0px 
+  }
+p
+  {
+      font-size: 24px;
+      margin-bottom: 24px; 
+      opacity: 0,75; 
+      text-align: center;
+  }
+
+  i 
+  {
+      color: #fff;
+      outline: 0;
+    text-decoration: none;
+  }
+
+.wraper 
+  {
+      weight: 100vw;
+      height: 100vh;
+      background-color: #348cb2; 
+      display : flex;  /*ukadanie boxow przechodzi w tryp flex */ 
+      align-items: center;   /* dzieki tej instrukci wyrownujemy box !!! */
+      justify-content: center;  /* dzieki tej instrukci wyrownujemy box !!! */ 
+  }  
+
+
+.bg {
+    /*konfiguracja animacji */  
+    animation: bg 60s linear infinite;    
+
+/* tutaj jest zrodlo oraz rozmieszczenie grafiki tla co wazne w skladni 
+     background: url(" ") slowo url musi byc przy zawiasie */ 
+
+    background: url("https://image.ibb.co/hmyUDS/bg.jpg") repeat-x bottom left;
+    height: 100%;
+    position: absolute;
+    background-size: 1500px;
+    width: 4500px;       
+}  
+.middle-box 
+  {
+      animation: show 1s ease-in-out 1s forwards; /* animacja poczatek zdefinowanie co ma siedziac !!!  */ 
+      opacity: 0;  /* startowe ustawnie czyli zerowa widocznnosc boxa !!! */ 
+      text-align: center;
+      width: 100%; 
+ }  
+
+ .nav
+ {
+   display: flex;
+   justify-content: center; 
+ }
+ 
+ 
+ .nav-item 
+  {
+     /* font-size : 25px;   tutaj mozna by bylo zdefinowac rozmiar ikonki ale 
+      zrobilismy to klasa    nav-item a     ktora jest nizej  */ 
+      transition: all 0.3s ease-in-out; /*animacja */ 
+      border-radius: 100%;  /* robi okragle boardy */ 
+      border: solid 1px #fff;
+      width: 75px;
+      height: 75px;
+      margin: 0 10px;
+      display: flex;         /*                                             */
+      align-items: center;   /*     tutaj ustawiamy ikonki w srodku kola    */
+      justify-content: center; /*                                            */ 
+  }
+
+.nav-item:hover /* konfiguracja po najechaniu mysza */ 
+{
+  cursor:pointer;
+  background-color: rgba(255,255,255, 0.175);
+  }
+
+.nav-item i {
+  font-size: 35px; /* rozmair ikonki WAZNE !!! definujemy to jako podklase gdzie tagi zaczynaja sie na <i> koncza </i> */ 
+}
+
+@keyframes show  /* tutaj jest skadnia przebiegu animacj co i jak ma sie przemieszczac !!!*/ 
+{
+     0%  /*start */
+      {  
+            margin-top: 268px;  /* jesli chodzi  wartosc dodatnie i ujemnie to definuje pocztek i koniec animacji
+                                minusy ida w gore a dodatnie cyfry w dol , jakos tak !!! */ 
+            opacity: 0;
+      }
+     100% /*koniec */ 
+     {
+           margin-top: -300px;  
+           opacity: 1;
+        }   
+}
+
+@keyframes bg {
+0%  {
+    left: 0;
+    }
+100% {
+       left: -2000px;  /* tutaj koniecznie musi byc dodatni znak bo inaczej animamcja nie 
+                        bedzie dziala poprawnie !!!! */ 
+      }
+
+
+
+}
+
+ 
+
+}
